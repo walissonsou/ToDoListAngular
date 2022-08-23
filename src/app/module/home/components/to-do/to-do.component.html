@@ -3,7 +3,7 @@
     <li *ngFor="let item of taskList; let i = index">
       <input type="checkbox" [(ngModel)]="item.checked">
       <input type="text" [(ngModel)]="item.task">
-      <button>
+      <button (click)="deleteItemTaskList(i)">
       <img src="../../../../../assets/icon/icon-trash.svg" alt="trash">
     </button>
 
@@ -14,6 +14,7 @@
   </ul>
 
 
+
 </section>
-<app-todo-button-add-items></app-todo-button-add-items>
-<app-todo-button-delete-all></app-todo-button-delete-all>
+<app-todo-button-add-items (EmitterAddItemTaskList)="SetEmitItem($event)"></app-todo-button-add-items>
+<app-todo-button-delete-all *ngIf="taskList.length" (click)="deleteAllTaskList()"></app-todo-button-delete-all>
