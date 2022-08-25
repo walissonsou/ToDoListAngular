@@ -23,7 +23,8 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+
   ]
 })
 export class HomeModule { }
